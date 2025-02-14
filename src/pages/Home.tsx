@@ -6,7 +6,10 @@ import type { CocktailResponse, CocktailDetails } from "../types/Cocktail";
 const Home = () => {
   const { data, error } = useSWR<CocktailResponse<CocktailDetails>>(
     "https://www.thecocktaildb.com/api/json/v1/1/random.php",
-    fetcher
+    fetcher,
+    {
+      revalidateOnFocus: false,
+    }
   );
   const cocktailDetails = data?.drinks[0];
   console.log(cocktailDetails);
