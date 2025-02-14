@@ -1,17 +1,8 @@
 import CocktailDetail from "../components/CocktailDetail";
-import { fetcher } from "../helpers";
-import useSWR from "swr";
-import type { CocktailResponse, CocktailDetails } from "../types/Cocktail";
+import { useRandomCocktail } from "../hooks/useRandomCocktail";
 
 const Home = () => {
-  const { data, error } = useSWR<CocktailResponse<CocktailDetails>>(
-    "https://www.thecocktaildb.com/api/json/v1/1/random.php",
-    fetcher,
-    {
-      revalidateOnFocus: false,
-    }
-  );
-  const cocktailDetails = data?.drinks[0];
+  const { cocktailDetails, error } = useRandomCocktail();
   return (
     <>
       <h1 className="subtle">Home</h1>
