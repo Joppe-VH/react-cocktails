@@ -17,10 +17,7 @@ const Layout = ({ children }: Props) => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/products">Products</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/cocktails">Cocktails</NavLink>
             </li>
           </ul>
         </nav>

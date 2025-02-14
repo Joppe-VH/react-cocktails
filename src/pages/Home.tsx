@@ -1,11 +1,20 @@
+import CocktailDetail from "../components/CocktailDetail";
+import { fetcher } from "../helpers";
+import useSWR from "swr";
+import type { CocktailResponse, CocktailDetails } from "../types/Cocktail";
+
 const Home = () => {
+  const { data, error } = useSWR<CocktailResponse<CocktailDetails>>(
+    "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+    fetcher
+  );
+  const cocktailDetails = data?.drinks[0];
+  console.log(cocktailDetails);
   return (
     <>
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore iure
-        deserunt minus vero corporis est qui voluptate id a iste?
-      </p>
+      <h1 className="subtle">Home</h1>
+      {error && <p>error.message</p>}
+      {cocktailDetails && <CocktailDetail details={cocktailDetails} />}
     </>
   );
 };
