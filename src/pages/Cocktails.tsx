@@ -2,6 +2,7 @@ import useSWR from "swr";
 import { fetcher, slugit } from "../helpers";
 import type { Cocktail, CocktailResponse } from "../types/Cocktail";
 import { Link } from "react-router";
+import CocktailCard from "../components/cocktailCard";
 
 const Cocktails = () => {
   const {
@@ -21,18 +22,9 @@ const Cocktails = () => {
         {cocktails?.drinks &&
           cocktails.drinks.map((cocktail) => (
             <li key={cocktail.idDrink}>
-              <Link
-                to={`/cocktails/${cocktail.idDrink}/${slugit(
-                  cocktail.strDrink
-                )}`}
-              >
-                <div className="img-container">
-                  <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-                </div>
-                <p>{cocktail.strDrink}</p>
-              </Link>
-            </li>
-          ))}
+            <CocktailCard cocktail={cocktail} />
+          </li>
+        ))}
       </ul>
     </>
   );
