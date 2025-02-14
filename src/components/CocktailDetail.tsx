@@ -10,7 +10,6 @@ const CocktailDetail = ({ details, TitleTags = "h2" }: Props) => {
   return (
     <div className="cocktail-detail">
       <TitleTags>{details.strDrink}</TitleTags>
-      <p>{details.strInstructions}</p>
       <div className="img-container">
         <img
           src={
@@ -21,6 +20,7 @@ const CocktailDetail = ({ details, TitleTags = "h2" }: Props) => {
           alt={details.strDrink}
         />
       </div>
+      <p>{details.strInstructions}</p>
     </div>
   );
 };
