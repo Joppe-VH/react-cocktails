@@ -8,21 +8,25 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <header>
-        <Link to="/">
-          <img src="/vite.svg" alt="" />
-        </Link>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/cocktails">Cocktails</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <div className="container">
+          <Link to="/">
+            <img src="/vite.svg" alt="" />
+          </Link>
+          <nav>
+            <ul>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/cocktails">Cocktails</NavLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
-      <main>{children}</main>
+      <main>
+        <div className="container">{children}</div>
+      </main>
       <footer>&copy; 2025 - Syntra Full Stack</footer>
     </>
   );

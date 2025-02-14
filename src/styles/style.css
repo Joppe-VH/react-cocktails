@@ -28,6 +28,12 @@ a {
   }
 }
 
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 body {
   font-size: 1.7rem;
   color-scheme: light dark;
@@ -35,7 +41,7 @@ body {
   background-color: var(--color-bg);
   min-height: 100vh;
   padding: 0 20px;
-  header {
+  header .container {
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -58,8 +64,6 @@ body {
   main {
     border-top: 1px solid var(--color);
     border-bottom: 1px solid var(--color);
-    max-width: 1400px;
-    margin: 0 auto;
     padding: 20px;
     h1,
     h2 {
