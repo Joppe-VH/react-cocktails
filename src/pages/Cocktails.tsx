@@ -1,5 +1,5 @@
 import { useCocktails } from "../hooks/useCocktails";
-import CocktailCard from "../components/cocktailCard";
+import CocktailCard from "../components/CocktailCard";
 
 const Cocktails = () => {
   const { cocktails, isLoading, error } = useCocktails();
