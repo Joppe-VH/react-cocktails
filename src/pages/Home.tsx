@@ -12,7 +12,6 @@ const Home = () => {
     }
   );
   const cocktailDetails = data?.drinks[0];
-  console.log(cocktailDetails);
   return (
     <>
       <h1 className="subtle">Home</h1>
